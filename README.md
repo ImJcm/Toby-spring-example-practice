@@ -15,4 +15,5 @@
 
 <hr>
 <h2> 토비의 스프링 3.1 Vol.1 (스프링의 이해와 원리) </h2>
-<p>Maven을 기준으로 하는 예제를 Spring boot + Gradle로 설정하여 예제 실습 Repository</p>
+<p>Maven을 기준으로 하는 예제를 Spring boot + Gradle로 설정하여 예제 실습 Repository</p><br>
+▶ Chapter 별 예제 코드는 Branch로 구분하여 저장

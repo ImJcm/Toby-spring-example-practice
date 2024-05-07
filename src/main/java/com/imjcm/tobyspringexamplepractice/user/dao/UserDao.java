@@ -9,14 +9,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao {
-    private SimpleConnectionMaker simpleConnectionMaker;
+    private ConnectionMaker connectionMaker;
 
     public UserDao() {
-        this.simpleConnectionMaker = new SimpleConnectionMaker();
+        this.connectionMaker = new NConnectionMaker();
+        //this.connectionMaker = new DConnectionMaker();
     }
 
     public void add(User user) throws ClassNotFoundException, SQLException {
-        Connection con = simpleConnectionMaker.makeNewConnection();
+        Connection con = connectionMaker.makeConnection();
 
         PreparedStatement pstmt = con.prepareStatement(
                 "insert into user(id,name,password) values(?,?,?)"
@@ -33,7 +34,7 @@ public class UserDao {
     }
 
     public User get(String id) throws ClassNotFoundException, SQLException {
-        Connection con = simpleConnectionMaker.makeNewConnection();
+        Connection con = connectionMaker.makeConnection();
 
         PreparedStatement pstmt = con.prepareStatement(
                 "select * from user where id = ?"
